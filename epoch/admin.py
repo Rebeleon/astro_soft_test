@@ -12,6 +12,6 @@ class LogEntryAdmin(admin.ModelAdmin):
     def get_accept_language_with_flag(self, obj):
         image_filename = '{}.svg'.format(obj.accept_language[3:5])
         image_path = os.path.join(MEDIA_URL, 'flags', image_filename)
-        return format_html('<img src="{}" alt="{}">', image_path, obj.accept_language)
+        return format_html('<img src="{}" alt="{}">', image_path, obj.accept_language[3:5])
 
     get_accept_language_with_flag.short_description = 'Accept Language'
